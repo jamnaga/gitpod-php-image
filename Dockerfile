@@ -65,6 +65,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
         php-xml \
         php-zip
 # PHP language server is installed by theia-php-extension
+RUN apt-get clean && rm -rf /var/lib/apt/lists
 
 ### Gitpod user (2) ###
 USER gitpod
@@ -74,5 +75,3 @@ RUN sudo echo "Running 'sudo' for Gitpod: success"
 #RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # And clean up the image
-
-RUN apt-get clean && rm -rf /var/lib/apt/lists
