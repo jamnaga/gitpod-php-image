@@ -18,8 +18,7 @@ RUN yes | unminimize \
         vim \
         unzip \
         multitail \
-    && locale-gen en_US.UTF-8 \
-    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/*
+    && locale-gen en_US.UTF-8
 ENV LANG=en_US.UTF-8
 
 ### Gitpod user ###
@@ -64,8 +63,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
         php-sqlite3 \
         php-tokenizer \
         php-xml \
-        php-zip \
-    && apt-get clean && /tmp/*
+        php-zip
 # PHP language server is installed by theia-php-extension
 
 ### Gitpod user (2) ###
@@ -77,4 +75,4 @@ RUN sudo echo "Running 'sudo' for Gitpod: success"
 
 # And clean up the image
 
-RUN rm -rf /var/lib/apt/lists
+RUN apt-get clean && rm -rf /var/lib/apt/lists
