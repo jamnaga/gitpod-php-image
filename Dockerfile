@@ -12,6 +12,7 @@ RUN yes | unminimize \
         locales \
         man-db \
         nano \
+        apt-utils \
         software-properties-common \
         sudo \
         vim \
@@ -54,7 +55,6 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
         php-curl \
         php-date \
         php-gd \
-        php-gettext \
         php-intl \
         php-json \
         php-mbstring \
